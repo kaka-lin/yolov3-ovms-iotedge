@@ -203,9 +203,16 @@ When Deployment succeeded, don't forget to expose yor vm's port, like:
 If you can access the IoT Edge device via public IP with port 5010 allowed,
 the demo page can be visited in your browser with `http://<IoTEdgeDeviceAddress>:5010/`, you would see "Hello from Yolov3 inferencing based OVMS".
 
-Then, you can test `"/score"`
+Then, you can test `"/score"` using `curl` or `python:request`, as below:
+
+### `Curl`
 
 ```bash
 # example with pretty-print JSON
 $ curl -X POST http://<IoTEdgeDeviceAddress>:5010/score -H "Content-Type: image/jpeg" --data-binary @<full_path_to_image_file_in_jpeg> | python -m json.tool
+```
+### `Python:request`
+
+```bash
+$ python3 test.py <IP Address> <path_to_image_file>
 ```
