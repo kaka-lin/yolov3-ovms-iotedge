@@ -1,0 +1,27 @@
+version: "3"
+services:
+  ovms-server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    image: yolov3-ovms-server
+    restart: always
+    ports:
+      - "9000:9000"
+    entrypoint: "sh -c"
+    command: >
+      "/ovms/bin/ovms
+      --model_path /models/yolov3
+      --model_name yolov3 --port 9000"
+  ovms-app:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    image: yolov3-ovms-app
+    restart: always
+    environment:
+      PYTHONUNBUFFERED: "1"
+    ports:
+      - "5010:5010"
+    depends_on:
+      - "ovms-server"
