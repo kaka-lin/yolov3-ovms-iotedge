@@ -43,8 +43,8 @@
             "restartPolicy": "always",
             "settings": {
               "image": "kakalin/ovms-server:0.0.1-amd64",
-              "createOptions": "{\"ExposedPorts\":{\"9000/tcp\":{}},\"Cmd\":[\"/ovms/bin/ovms --model_path /models/yolov3 --model_name yolov3 --port 9000\"],\"Entrypoint\":[\"sh\",\"-c\"],\"HostConfig\":{\"PortBindings\":{\"9000/tcp\":[{\"HostIp\":\"\",\"HostPort\":\"9000\"}]},\"LogConfig\":{\"Type\":\"\",\"Config\":{}}},\"Labels\":{\"com.docker.compose.project\":\"yolov3-ovms-iotedge\",\"com.docker.compose.service\":\"ovms-server\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.version\":\"1.24.0\",\"com.docker.compose.config-hash\":\"7f0",
-              "createOptions01": "9e8165c07b4b5d43b0d9ac09a06a4062a31da2ae1e43997ee8e0f4a90fcfd\"}}"
+              "createOptions": "{\"ExposedPorts\":{\"9010/tcp\":{}},\"Cmd\":[\"/ovms/bin/ovms --model_path /models/yolov3 --model_name yolov3 --port 9010\"],\"Entrypoint\":[\"sh\",\"-c\"],\"HostConfig\":{\"PortBindings\":{\"9010/tcp\":[{\"HostIp\":\"\",\"HostPort\":\"9010\"}]},\"LogConfig\":{\"Type\":\"\",\"Config\":{}}},\"Labels\":{\"com.docker.compose.project\":\"yolov3-ovms-iotedge\",\"com.docker.compose.service\":\"ovms-server\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.version\":\"1.24.0\",\"com.docker.compose.config-hash\":\"2f7",
+              "createOptions01": "f5dc4695dcdb4e7597f9f56dc66d73e71cc219d38778535c223350999dd96\"}}"
             }
           },
           "ovms-app": {
@@ -54,7 +54,7 @@
             "restartPolicy": "always",
             "settings": {
               "image": "kakalin/ovms-app:0.0.1-amd64",
-              "createOptions": "{\"ExposedPorts\":{\"5010/tcp\":{}},\"Env\":[\"PYTHONUNBUFFERED=1\"],\"HostConfig\":{\"PortBindings\":{\"5010/tcp\":[{\"HostIp\":\"\",\"HostPort\":\"5010\"}]},\"LogConfig\":{\"Type\":\"\",\"Config\":{}}},\"Labels\":{\"com.docker.compose.project\":\"yolov3-ovms-iotedge\",\"com.docker.compose.service\":\"ovms-app\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.version\":\"1.24.0\",\"com.docker.compose.config-hash\":\"dcdef0702a8e26d7c244eb1fc29534413b8822c98e1db982a604609a5b2e8c1a\"}}"
+              "createOptions": "{\"ExposedPorts\":{\"5010/tcp\":{}},\"Env\":[\"PYTHONUNBUFFERED=1\"],\"HostConfig\":{\"PortBindings\":{\"5010/tcp\":[{\"HostIp\":\"\",\"HostPort\":\"5010\"}]},\"LogConfig\":{\"Type\":\"\",\"Config\":{}}},\"Labels\":{\"com.docker.compose.project\":\"yolov3-ovms-iotedge\",\"com.docker.compose.service\":\"ovms-app\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.version\":\"1.24.0\",\"com.docker.compose.config-hash\":\"207e88c8455410082d4dfe5fefc6514de40f2110354eec5e1ce8e5d300e5cd51\"}}"
             }
           }
         }

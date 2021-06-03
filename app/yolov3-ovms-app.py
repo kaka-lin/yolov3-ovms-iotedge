@@ -70,7 +70,7 @@ def yolo_score(image):
     print("Start processing:")
     print(f"\tModel name: {model_name}")
 
-    with grpc.insecure_channel('ovms-server:9000') as channel:
+    with grpc.insecure_channel('ovms-server:9010') as channel:
         stub = prediction_service_pb2_grpc.PredictionServiceStub(channel)
 
         image = preprocess(image)

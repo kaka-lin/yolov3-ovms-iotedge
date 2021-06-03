@@ -66,10 +66,10 @@
               "image": "${MODULES.ovms-server}",
               "createOptions": {
                 "ExposedPorts": {
-                  "9000/tcp": {}
+                  "9010/tcp": {}
                 },
                 "Cmd": [
-                  "/ovms/bin/ovms --model_path /models/yolov3 --model_name yolov3 --port 9000"
+                  "/ovms/bin/ovms --model_path /models/yolov3 --model_name yolov3 --port 9010"
                 ],
                 "Entrypoint": [
                   "sh",
@@ -77,10 +77,10 @@
                 ],
                 "HostConfig": {
                   "PortBindings": {
-                    "9000/tcp": [
+                    "9010/tcp": [
                       {
                         "HostIp": "",
-                        "HostPort": "9000"
+                        "HostPort": "9010"
                       }
                     ]
                   },
@@ -95,7 +95,7 @@
                   "com.docker.compose.oneoff": "False",
                   "com.docker.compose.container-number": "1",
                   "com.docker.compose.version": "1.24.0",
-                  "com.docker.compose.config-hash": "7f09e8165c07b4b5d43b0d9ac09a06a4062a31da2ae1e43997ee8e0f4a90fcfd"
+                  "com.docker.compose.config-hash": "2f7f5dc4695dcdb4e7597f9f56dc66d73e71cc219d38778535c223350999dd96"
                 }
               }
             }
@@ -134,7 +134,7 @@
                   "com.docker.compose.oneoff": "False",
                   "com.docker.compose.container-number": "1",
                   "com.docker.compose.version": "1.24.0",
-                  "com.docker.compose.config-hash": "dcdef0702a8e26d7c244eb1fc29534413b8822c98e1db982a604609a5b2e8c1a"
+                  "com.docker.compose.config-hash": "207e88c8455410082d4dfe5fefc6514de40f2110354eec5e1ce8e5d300e5cd51"
                 }
               }
             }
