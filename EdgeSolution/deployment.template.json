@@ -86,7 +86,10 @@
                   },
                   "LogConfig": {
                     "Type": "",
-                    "Config": {}
+                    "Config": {
+                      "max-size": "10m",
+                      "max-file": "10"
+                    }
                   }
                 },
                 "Labels": {
@@ -109,7 +112,8 @@
               "image": "${MODULES.ovms-app}",
               "createOptions": {
                 "ExposedPorts": {
-                  "5010/tcp": {}
+                  "5010/tcp": {},
+                  "44000/tcp": {}
                 },
                 "Env": [
                   "PYTHONUNBUFFERED=1"
@@ -121,12 +125,23 @@
                         "HostIp": "",
                         "HostPort": "5010"
                       }
+                    ],
+                    "44000/tcp": [
+                      {
+                        "HostIp": "",
+                        "HostPort": "44000"
+                      }
                     ]
                   },
                   "LogConfig": {
                     "Type": "",
-                    "Config": {}
-                  }
+                    "Config": {
+                      "max-size": "10m",
+                      "max-file": "10"
+                    }
+                  },
+                  "IpcMode": "host",
+                  "ShmSize": 1536870912
                 },
                 "Labels": {
                   "com.docker.compose.project": "yolov3-ovms-iotedge",

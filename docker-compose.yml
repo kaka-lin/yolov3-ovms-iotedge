@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: server.Dockerfile
-    image: yolov3-ovms-server
+    image: ovms-server:0.0.2-amd64
     restart: always
     ports:
       - "9010:9010"
@@ -17,11 +17,13 @@ services:
     build:
       context: .
       dockerfile: app.Dockerfile
-    image: yolov3-ovms-app
+    image: ovms-app:0.0.2-amd64
     restart: always
     environment:
       PYTHONUNBUFFERED: "1"
     ports:
       - "5010:5010"
+      - "44000:44000"
+      - "8888:8888"
     depends_on:
       - "ovms-server"
